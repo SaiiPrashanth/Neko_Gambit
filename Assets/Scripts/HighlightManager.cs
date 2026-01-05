@@ -1,0 +1,52 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace ChessGame
+{
+    public class HighlightManager : MonoBehaviour
+    {
+        public static HighlightManager Instance;
+        public GameObject highlightPrefab;
+        private List<GameObject> highlights = new List<GameObject>();
+
+        private void Start()
+        {
+            Instance = this;
+        }
+
+        // Show the circles for where you can move
+        public void HighlightAllowedMoves(bool[,] moves)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (moves[i, j])
+                    {
+                        GameObject go = GetHighlightObject();
+                        go.SetActive(true);
+                        go.transform.position = new Vector3(j + 0.5f, 0.01f, i + 0.5f);
+                    }
+                }
+            }
+        }
+
+        // Hide all the circles
+        public void HideHighlights()
+        {
+            foreach (GameObject go in highlights) go.SetActive(false);
+        }
+
+        // Reuse objects so we don't lag
+        private GameObject GetHighlightObject()
+        {
+            GameObject go = highlights.Find(g => !g.activeSelf);
+            if (go == null)
+            {
+                go = Instantiate(highlightPrefab);
+                highlights.Add(go);
+            }
+            return go;
+        }
+    }
+}
