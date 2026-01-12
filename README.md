@@ -1,5 +1,7 @@
 # Neko Gambit
 
+![Gameplay](Screenshots/Neko_Gambit_gif1.gif)
+
 **Neko Gambit** is a fully functional 3D Chess implementation built in **Unity**.
 
 ## Overview
@@ -48,6 +50,15 @@ A stylized 3D Chess game set in a mystical desert kingdom. Command an army of **
 ### Visuals
 - **`HighlightManager.cs`**: Manages the "Allowed Move" highlights on the board tiles.
 - **`CameraManager.cs`**: Controls camera positioning (likely for switching views between players or rotating the board).
+
+## Gallery
+
+![Gameplay Extra](Screenshots/Neko_Gambit_gif2.gif)
+
+| | |
+|:---:|:---:|
+| ![Screenshot 1](Screenshots/Neko_Gambit_img_.jpg) | ![Screenshot 2](Screenshots/Neko_Gambit_img_1.jpg) |
+| ![Screenshot 3](Screenshots/Neko_Gambit_img_2.jpg) | |
 
 ## License
 
